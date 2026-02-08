@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Only addition: styles for full-screen background GIF -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #111; /* dark fallback if GIF fails */
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGF6dGd4OTY3ZXJlNTZqdXJscGpyb3V3bjg0eXFkNGtkaDVrMHViZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aSYON5u8MGpjs4Llrw/giphy.gif') center/cover no-repeat;
+            background-size: cover;
+            z-index: -2;
+            opacity: 0.75;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3); /* subtle overlay for readability */
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
